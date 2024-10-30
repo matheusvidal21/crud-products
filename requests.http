@@ -1,0 +1,82 @@
+## ======= Clients API =======
+
+### Get All Clients
+GET http://localhost:8080/api/clients
+Accept: application/json
+
+### Get Client by ID
+GET http://localhost:8080/api/clients/1
+Accept: application/json
+
+### Create Client
+POST http://localhost:8080/api/clients
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Lucas Pereira",
+  "cpf": "55566677788",
+  "gender": "MALE",
+  "birthDate": "1995-09-12"
+}
+
+### Update Client
+PUT http://localhost:8080/api/clients/2
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Maria Oliveira da Silva",
+  "cpf": "98765432100",
+  "gender": "FEMALE",
+  "birthDate": "1990-08-15"
+}
+
+### Delete Client
+DELETE http://localhost:8080/api/clients/4
+
+### Logic Delete Client
+DELETE http://localhost:8080/api/clients/logic-delete/2
+
+
+## ======= Products API =======
+
+### Get All Products
+GET http://localhost:8080/api/products
+Accept: application/json
+
+### Get Product by ID
+GET http://localhost:8080/api/products/3
+Accept: application/json
+
+### Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Carne",
+  "brand": "MarcaB",
+  "manufacturingDate": "2023-06-01",
+  "expirationDate": "2023-08-01",
+  "category": "FOOD"
+}
+
+### Update Product
+PUT http://localhost:8080/api/products/5
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Detergente Líquido",
+  "brand": "MarcaC",
+  "manufacturingDate": "2023-05-01",
+  "expirationDate": "2025-05-01",
+  "category": "CLEANING"
+}
+
+### Delete Product
+DELETE http://localhost:8080/api/products/2
+
+### Logic Delete Product
+DELETE http://localhost:8080/api/products/logic-delete/4

@@ -1,11 +1,13 @@
 package br.ufrn.imd.web.enums;
 
+import java.util.Arrays;
+
 public enum Category {
 
     COSMETICS("Cosmetics"),
     FOOD("Food"),
     CLEANING("Cleaning"),
-    PERSONAL_HYGIENE("Personal Hygiene");
+    PERSONAL_CARE("Personal Care");
 
     private String name;
 
@@ -15,6 +17,12 @@ public enum Category {
 
     public String getName() {
         return name;
+    }
+
+    public static Category fromString(String name){
+        return Arrays.asList(Category.values()).stream()
+                .filter(category -> category.getName().equalsIgnoreCase(name))
+                .findFirst().orElseThrow(() -> new IllegalArgumentException("Invalid Category name"));
     }
 
 }

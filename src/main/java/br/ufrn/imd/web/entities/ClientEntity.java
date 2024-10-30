@@ -1,6 +1,6 @@
 package br.ufrn.imd.web.entities;
 
-import br.ufrn.imd.web.enums.Category;
+import br.ufrn.imd.web.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tb_products")
+@Table(name = "tb_clients")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductEntity {
+public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,15 +24,13 @@ public class ProductEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = true)
-    private String brand;
-
-    private LocalDate manufacturingDate;
-
-    private LocalDate expirationDate;
+    @Column(nullable = false)
+    private String cpf;
 
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private Gender gender;
+
+    private LocalDate birthDate;
 
     private Boolean active = true;
 
@@ -42,4 +40,5 @@ public class ProductEntity {
             active = true;
         }
     }
+
 }
