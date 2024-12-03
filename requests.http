@@ -1,82 +1,174 @@
-## ======= Clients API =======
+### ClientController Endpoints
 
-### Get All Clients
+# Get all clients
 GET http://localhost:8080/api/clients
-Accept: application/json
+Content-Type: application/json
 
-### Get Client by ID
+###
+
+# Get client by ID
 GET http://localhost:8080/api/clients/1
-Accept: application/json
+Content-Type: application/json
 
-### Create Client
+###
+
+# Create a new client
 POST http://localhost:8080/api/clients
 Content-Type: application/json
-Accept: application/json
 
 {
-  "name": "Lucas Pereira",
-  "cpf": "55566677788",
-  "gender": "MALE",
-  "birthDate": "1995-09-12"
-}
-
-### Update Client
-PUT http://localhost:8080/api/clients/2
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name": "Maria Oliveira da Silva",
-  "cpf": "98765432100",
+  "name": "Alice Smith",
+  "cpf": "12345678901",
   "gender": "FEMALE",
-  "birthDate": "1990-08-15"
+  "birthDate": "1990-05-12"
 }
 
-### Delete Client
-DELETE http://localhost:8080/api/clients/4
+###
 
-### Logic Delete Client
+# Update an existing client
+PUT http://localhost:8080/api/clients/1
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson - UPDATED",
+  "cpf": "12345678901",
+  "gender": "MALE"
+}
+
+###
+
+# Delete a client (hard delete)
+DELETE http://localhost:8080/api/clients/1
+Content-Type: application/json
+
+###
+
+# Logical delete of a client
 DELETE http://localhost:8080/api/clients/logic-delete/2
+Content-Type: application/json
 
+###
 
-## ======= Products API =======
+### OrderController Endpoints
 
-### Get All Products
+# Get all orders
+GET http://localhost:8080/api/orders
+Content-Type: application/json
+
+###
+
+# Get order by ID
+GET http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+###
+
+# Create a new order
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "codigo": "ORD123",
+  "clientId": 2,
+  "productsIds": [1, 2]
+}
+
+###
+
+# Update an existing order
+POST http://localhost:8080/api/orders/4
+Content-Type: application/json
+
+{
+  "codigo": "ORD124 - UPDATED",
+  "clientId": 2,
+  "productsIds": [3, 4]
+}
+
+###
+
+# Delete an order (hard delete)
+DELETE http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+###
+
+# Logical delete of an order
+DELETE http://localhost:8080/api/orders/logic-delete/2
+Content-Type: application/json
+
+###
+
+# Add a product to an order
+POST http://localhost:8080/api/orders/add-product
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": 2
+}
+
+###
+
+# Remove a product from an order
+POST http://localhost:8080/api/orders/remove-product
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": 2
+}
+
+###
+
+### ProductController Endpoints
+
+# Get all products
 GET http://localhost:8080/api/products
-Accept: application/json
+Content-Type: application/json
 
-### Get Product by ID
-GET http://localhost:8080/api/products/3
-Accept: application/json
+###
 
-### Create Product
+# Get product by ID
+GET http://localhost:8080/api/products/9
+Content-Type: application/json
+
+###
+
+# Create a new product
 POST http://localhost:8080/api/products
 Content-Type: application/json
-Accept: application/json
 
 {
-  "name": "Carne",
-  "brand": "MarcaB",
-  "manufacturingDate": "2023-06-01",
-  "expirationDate": "2023-08-01",
-  "category": "FOOD"
+  "name": "Shampoo",
+  "brand": "BrandA",
+  "manufacturingDate": "2023-01-01",
+  "expirationDate": "2025-01-01",
+  "category": "Personal Care"
 }
 
-### Update Product
-PUT http://localhost:8080/api/products/5
+###
+
+# Update an existing product
+PUT http://localhost:8080/api/products/1
 Content-Type: application/json
-Accept: application/json
 
 {
-  "name": "Detergente Líquido",
-  "brand": "MarcaC",
-  "manufacturingDate": "2023-05-01",
-  "expirationDate": "2025-05-01",
-  "category": "CLEANING"
+  "name": "Shampoo - UPDATED",
+  "brand": "BrandA",
+  "manufacturingDate": "2023-01-01",
+  "expirationDate": "2025-01-01",
+  "category": "Personal Care"
 }
 
-### Delete Product
-DELETE http://localhost:8080/api/products/2
+###
 
-### Logic Delete Product
-DELETE http://localhost:8080/api/products/logic-delete/4
+# Delete a product (hard delete)
+DELETE http://localhost:8080/api/products/1
+Content-Type: application/json
+
+###
+
+# Logical delete of a product
+DELETE http://localhost:8080/api/products/logic-delete/2
+Content-Type: application/json

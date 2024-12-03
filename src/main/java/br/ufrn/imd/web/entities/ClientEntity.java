@@ -1,6 +1,8 @@
 package br.ufrn.imd.web.entities;
 
 import br.ufrn.imd.web.enums.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_clients")
@@ -33,6 +36,11 @@ public class ClientEntity {
     private LocalDate birthDate;
 
     private Boolean active = true;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JsonManagedReference
+    private List<OrderEntity> orders;
 
     @PrePersist
     public void prePersist(){
