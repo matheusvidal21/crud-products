@@ -39,6 +39,11 @@ mvn spring-boot:run
 - Utilize o arquivo `requests.http` para fazer requisições e testar a API. 
 - Este arquivo contém endpoints para listar, criar, atualizar e deletar clientes e produtos.
 
+Observações:
+- Quando a aplicação é inicializada pela primeira vez é feito um seed no banco de dados, adicionando registros para tabelas, incluindo o usuário `admin` com a senha `admin`.
+- Em toda requisição é necessário passar um token JWT para autenticação, utilize o endpoint `api/auth/login` para se autenticar com qualquer usuário.
+- Utilize o usuário `admin` para ter acesso a endpoints que só ROLE_ADMIN tem permissão.
+
 ### Comandos para acessar o MySQL no container
 Para verificar as tabelas e fazer consultas no MySQL:
 
