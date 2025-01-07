@@ -1,20 +1,23 @@
 ### ClientController Endpoints
 
-# Get all clients
+# Get all clients (USER, ADMIN)
 GET http://localhost:8080/api/clients
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Get client by ID
+# Get client by ID (USER, ADMIN)
 GET http://localhost:8080/api/clients/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Create a new client
+# Create a new client (ADMIN)
 POST http://localhost:8080/api/clients
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "name": "Alice Smith",
@@ -25,9 +28,10 @@ Content-Type: application/json
 
 ###
 
-# Update an existing client
+# Update an existing client (ADMIN)
 PUT http://localhost:8080/api/clients/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "name": "Alice Johnson - UPDATED",
@@ -37,35 +41,38 @@ Content-Type: application/json
 
 ###
 
-# Delete a client (hard delete)
+# Delete a client (hard delete) (ADMIN)
 DELETE http://localhost:8080/api/clients/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Logical delete of a client
+# Logical delete of a client (ADMIN)
 DELETE http://localhost:8080/api/clients/logic-delete/2
 Content-Type: application/json
-
-###
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ### OrderController Endpoints
 
-# Get all orders
+# Get all orders (USER, ADMIN)
 GET http://localhost:8080/api/orders
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Get order by ID
+# Get order by ID (USER, ADMIN)
 GET http://localhost:8080/api/orders/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Create a new order
+# Create a new order (ADMIN)
 POST http://localhost:8080/api/orders
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "codigo": "ORD123",
@@ -75,9 +82,10 @@ Content-Type: application/json
 
 ###
 
-# Update an existing order
+# Update an existing order (ADMIN)
 POST http://localhost:8080/api/orders/4
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "codigo": "ORD124 - UPDATED",
@@ -87,21 +95,24 @@ Content-Type: application/json
 
 ###
 
-# Delete an order (hard delete)
+# Delete an order (hard delete) (ADMIN)
 DELETE http://localhost:8080/api/orders/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Logical delete of an order
+# Logical delete of an order (ADMIN)
 DELETE http://localhost:8080/api/orders/logic-delete/2
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Add a product to an order
+# Add a product to an order (ADMIN)
 POST http://localhost:8080/api/orders/add-product
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "orderId": 1,
@@ -110,34 +121,36 @@ Content-Type: application/json
 
 ###
 
-# Remove a product from an order
+# Remove a product from an order (ADMIN)
 POST http://localhost:8080/api/orders/remove-product
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "orderId": 1,
   "productId": 2
 }
-
-###
 
 ### ProductController Endpoints
 
-# Get all products
+# Get all products (USER, ADMIN)
 GET http://localhost:8080/api/products
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Get product by ID
+# Get product by ID (USER, ADMIN)
 GET http://localhost:8080/api/products/9
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Create a new product
+# Create a new product (ADMIN)
 POST http://localhost:8080/api/products
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "name": "Shampoo",
@@ -149,9 +162,10 @@ Content-Type: application/json
 
 ###
 
-# Update an existing product
+# Update an existing product (ADMIN)
 PUT http://localhost:8080/api/products/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 {
   "name": "Shampoo - UPDATED",
@@ -163,12 +177,75 @@ Content-Type: application/json
 
 ###
 
-# Delete a product (hard delete)
+# Delete a product (hard delete) (ADMIN)
 DELETE http://localhost:8080/api/products/1
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
 
 ###
 
-# Logical delete of a product
-DELETE http://localhost:8080/api/products/logic-delete/2
+# Logical delete of a product (ADMIN)
+DELETE http://localhost:8080/api/products/logic-delete/3
 Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
+
+### UserController Endpoints
+
+# Get all users (USER, ADMIN)
+GET http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
+
+###
+
+# Get user by ID (USER, ADMIN)
+GET http://localhost:8080/api/users/2
+Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
+
+###
+
+# Update user password (USER, ADMIN)
+POST http://localhost:8080/api/users/update-password
+Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
+
+{
+  "userId": 2,
+  "password": "newpassword"
+}
+
+### AuthenticationController Endpoints
+
+# User Signup
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "NewUser",
+  "email": "newuser@example.com",
+  "password": "password"
+}
+
+###
+
+# User Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### UserRoleController Endpoints
+
+# Add Role to User (ADMIN)
+POST http://localhost:8080/api/add-role-to-user
+Content-Type: application/json
+Authorization: Bearer <INSIRA O TOKEN JWT AQUI, OBTENHA NO ENDPOINT DE LOGIN>
+
+{
+  "userId": 2,
+  "role": "ROLE_ADMIN"
+}

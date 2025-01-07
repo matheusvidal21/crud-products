@@ -26,3 +26,16 @@ INSERT IGNORE INTO order_products (order_id, product_id) VALUES
                                                       (1, 2), -- Alice ordered Soap
                                                       (2, 3), -- John ordered Pasta
                                                       (3, 4); -- Emma ordered Lipstick
+
+
+-- Insert initial roles into the `tb_roles` table (if not already present)
+INSERT IGNORE INTO tb_roles (role_name) VALUES
+                                 ('ROLE_ADMIN'),
+                                 ('ROLE_USER');
+
+-- Insert initial data into the `tb_users_roles` table to associate the admin user with the 'ROLE_ADMIN' role
+INSERT IGNORE INTO tb_users_roles (user_id, role_id)
+SELECT u.id, r.id
+FROM tb_users u
+         JOIN tb_roles r ON r.role_name = 'ROLE_ADMIN'
+WHERE u.username = 'admin';
